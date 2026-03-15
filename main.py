@@ -1,15 +1,15 @@
 import os
 
-from langchain_core.messages import SystemMessage, HumanMessage
+from langchain_core.prompts import ChatPromptTemplate
 from langchain_openai import ChatOpenAI
 
 os.environ["OPENAI_API_BASE"] = "https://api.deepseek.com/v1"
-messages = [
-    SystemMessage(content="Translate the following from English into Chinese"),
-    HumanMessage(content="Welcome to LLM application development")
-]
+prompt_template = ChatPromptTemplate.from_messages([
+    ("system", "Translate the following from English into Chinese:"),
+    ("user", "{text}")
+])
 
 model = ChatOpenAI(model="deepseek-chat")
-stream = model.stream(messages)
-for response in stream:
-    print(response.content, end="\n")
+chain = prompt_template | model
+result = chain.invoke({"text": "Welcome to LLM application development!"})
+print(result)
