@@ -1,9 +1,11 @@
 from dotenv import load_dotenv
 from langchain_core.chat_history import BaseChatMessageHistory, InMemoryChatMessageHistory
-from langchain_core.messages import HumanMessage
+from langchain_core.messages import HumanMessage, trim_messages
 from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 from langchain_core.runnables import RunnableWithMessageHistory
 from langchain_openai import ChatOpenAI
+
+from chapter02.compute_token import tiktoken_counter
 
 load_dotenv("../.env")
 
@@ -22,7 +24,14 @@ prompt_template = ChatPromptTemplate.from_messages([
     MessagesPlaceholder(variable_name="messages")
 ])
 
-with_message_history = RunnableWithMessageHistory(prompt_template | chat_model, get_session_history)
+trimmer = trim_messages(
+    max_tokens=4096,
+    strategy="last",
+    token_counter=tiktoken_counter,
+    include_system=True
+)
+
+with_message_history = RunnableWithMessageHistory(trimmer | prompt_template | chat_model, get_session_history)
 config = {"configurable": {"session_id": "yznx"}}
 
 while True:

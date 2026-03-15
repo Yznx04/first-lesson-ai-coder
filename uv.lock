@@ -227,6 +227,7 @@ dependencies = [
     { name = "dotenv" },
     { name = "langchain" },
     { name = "langchain-openai" },
+    { name = "tiktoken" },
 ]
 
 [package.metadata]
@@ -234,6 +235,7 @@ requires-dist = [
     { name = "dotenv", specifier = ">=0.9.9" },
     { name = "langchain", specifier = ">=1.2.12" },
     { name = "langchain-openai", specifier = ">=1.1.11" },
+    { name = "tiktoken", specifier = ">=0.12.0" },
 ]
 
 [[package]]
