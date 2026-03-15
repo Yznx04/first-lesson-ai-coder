@@ -10,5 +10,6 @@ messages = [
 ]
 
 model = ChatOpenAI(model="deepseek-chat")
-result = model.invoke(messages)
-print(result)
+stream = model.stream(messages)
+for response in stream:
+    print(response.content, end="\n")
