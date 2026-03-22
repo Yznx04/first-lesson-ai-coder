@@ -13,5 +13,6 @@ dependencies = [
     "langchain-community>=0.4.1",
     "langchain-openai>=1.1.11",
     "mem0ai>=1.0.7",
+    "redis==4.5.5",
     "tiktoken>=0.12.0",
 ]

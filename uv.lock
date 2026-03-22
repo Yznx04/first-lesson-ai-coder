@@ -925,6 +925,7 @@ dependencies = [
     { name = "langchain-community" },
     { name = "langchain-openai" },
     { name = "mem0ai" },
+    { name = "redis" },
     { name = "tiktoken" },
 ]
 
@@ -938,6 +939,7 @@ requires-dist = [
     { name = "langchain-community", specifier = ">=0.4.1" },
     { name = "langchain-openai", specifier = ">=1.1.11" },
     { name = "mem0ai", specifier = ">=1.0.7" },
+    { name = "redis", specifier = "==4.5.5" },
     { name = "tiktoken", specifier = ">=0.12.0" },
 ]
 
@@ -1744,6 +1746,15 @@ dependencies = [
 sdist = { url = "https://mirrors.tuna.tsinghua.edu.cn/pypi/web/packages/30/dd/f8a8261b83946af3cd65943c93c4f83e044f01184e8525404989d22a81a5/qdrant_client-1.17.1.tar.gz", hash = "sha256:22f990bbd63485ed97ba551a4c498181fcb723f71dcab5d6e4e43fe1050a2bc0", size = 344979, upload-time = "2026-03-13T17:13:44.678Z" }
 wheels = [
     { url = "https://mirrors.tuna.tsinghua.edu.cn/pypi/web/packages/68/69/77d1a971c4b933e8c79403e99bcbb790463da5e48333cc4fd5d412c63c98/qdrant_client-1.17.1-py3-none-any.whl", hash = "sha256:6cda4064adfeaf211c751f3fbc00edbbdb499850918c7aff4855a9a759d56cbd", size = 389947, upload-time = "2026-03-13T17:13:43.156Z" },
+]
+
+[[package]]
+name = "redis"
+version = "4.5.5"
+source = { registry = "https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple/" }
+sdist = { url = "https://mirrors.tuna.tsinghua.edu.cn/pypi/web/packages/53/30/128c5599bc3fa61488866be0228326b3e486be34480126f70e572043adf8/redis-4.5.5.tar.gz", hash = "sha256:dc87a0bdef6c8bfe1ef1e1c40be7034390c2ae02d92dcd0c7ca1729443899880", size = 4557115, upload-time = "2023-05-08T12:04:07.179Z" }
+wheels = [
+    { url = "https://mirrors.tuna.tsinghua.edu.cn/pypi/web/packages/e0/7f/21a09f8c9f5db6f5e24432f7a0f916ca386025d74e4da6d0f5164aa9a78a/redis-4.5.5-py3-none-any.whl", hash = "sha256:77929bc7f5dab9adf3acba2d3bb7d7658f1e0c2f1cafe7eb36434e751c471119", size = 240338, upload-time = "2023-05-08T12:04:05.568Z" },
 ]
 
 [[package]]
